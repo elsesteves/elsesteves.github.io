@@ -4,366 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eduardo Esteves - Web Developer</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/profile_20260917_cropped.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #144181;
-            --secondary: #2c3e50;
-            --accent: #144181;
-            --light: #f5f7fa;
-            --dark: #2c3e50;
-            --text: #333;
-            --text-light: #777;
-            --left-bg: #404040;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background: #f5f7fa;
-            padding: 20px;
-        }
-        
-        .resume-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            box-shadow: var(--shadow);
-            border-radius: 10px;
-            overflow: hidden;
-            background: white;
-        }
-        
-        .header {
-            background: var(--primary);
-            color: white;
-            padding: 30px;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            overflow: hidden;
-            margin-right: 30px;
-            background: #0d2d5e;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .profile-img i {
-            font-size: 70px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .header-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-        }
-        
-        .header-content h2 {
-            font-size: 1.3rem;
-            font-weight: 400;
-            opacity: 0.9;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 15px;
-            gap: 15px;
-        }
-
-        .contact-items_wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-item .contact-item-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            border-radius: 50%;
-            color: #fff;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .contact-item a.contact-item-icon {
-            background: #fff;
-            color: var(--accent);
-            width: 30px;
-            height: 30px;
-        }
-        
-        .main-content {
-            display: flex;
-        }
-        
-        .left-column {
-            flex: 1;
-            background: var(--left-bg);
-            padding: 30px;
-            color: white;
-        }
-        
-        .right-column {
-            flex: 2;
-            padding: 30px;
-        }
-        
-        .section {
-            margin-bottom: 30px;
-        }
-        
-        .section-title {
-            color: var(--accent);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--accent);
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--accent);
-        }
-        
-        .left-column .section-title {
-            color: white;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .skill-item {
-            margin-bottom: 15px;
-        }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-            color: white;
-        }
-        
-        .skill-bar {
-            height: 8px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .skill-level {
-            height: 100%;
-            background: var(--accent);
-            border-radius: 10px;
-        }
-        
-        .timeline-item {
-            margin-bottom: 20px;
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--accent);
-        }
-        
-        .timeline-item h3 {
-            color: var(--secondary);
-            margin-bottom: 5px;
-        }
-        
-        .timeline-item .date {
-            color: var(--text-light);
-            font-style: italic;
-            margin-bottom: 5px;
-        }
-        
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-        
-        .tag {
-            background: var(--primary);
-            color: var(--light);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
-        
-        .left-column .tag {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-        
-        .progress-circle {
-            width: 100px;
-            height: 100px;
-            position: relative;
-            margin: 15px auto;
-        }
-        
-        .circle-bg {
-            fill: none;
-            stroke: rgba(255, 255, 255, 0.2);
-            stroke-width: 3.8;
-        }
-        
-        .circle {
-            fill: none;
-            stroke: var(--accent);
-            stroke-width: 2.8;
-            stroke-linecap: round;
-            transform: rotate(-90deg);
-            transform-origin: 50% 50%;
-        }
-        
-        .circle-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        
-        .circle-content span {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: white;
-        }
-        
-        .languages {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--accent);
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .social-links a:hover {
-            transform: translateY(-3px);
-            background: var(--primary);
-        }
-
-        .website-pretext {
-            font-size: 14px;
-            margin-top: 20px;
-        }
-        
-        .website-link {
-            color: var(--accent);
-            text-decoration: none;
-            margin-right: 10px;
-            display: inline-block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        
-        .website-link:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-            }
-            
-            .header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .profile-img {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-            
-            .contact-info {
-                justify-content: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
 </head>
 <body>
     <div class="resume-container">
         <header class="header">
             <div class="profile-img">
-                <img src="assets/img/profile_20250813.jpg" alt="Profile Image" style="width: 100%;">
+                <img src="assets/img/profile_20260917_cropped.jpg" title="Eduardo Esteves" alt="Eduardo Esteves" style="width: 100%;">
             </div>
             <div class="header-content">
                 <h1>Eduardo Esteves</h1>
-                <h2>Web Developer</h2>
+                <h2 class="lang_sensitive" data-lang_en="Senior Web Developer" data-lang_pt="Programador Web Sénior">Senior Web Developer</h2>
                 <div class="contact-info">
                     <div class="contact-item">
                         <span class="contact-item-icon" style="margin-right: 4px;"><i class="fa-solid fa-map-pin"></i></span>
-                        <span>Lisbon, Portugal</span>
+                        <span class="lang_sensitive" data-lang_en="Lisbon, Portugal" data-lang_pt="Lisboa, Portugal">Lisbon, Portugal</span>
                     </div>
                     <div class="contact-items_wrapper">
                         <div class="contact-item">
                             <a class="contact-item-icon" href="https://linkedin.com/in/eduardo-esteves-8398a3206/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                         <div class="contact-item">
-                            <a class="contact-item-icon" href="https://github.com/edluis97" target="_blank" title="GitHub"><i class="fab fa-github" style="font-size: 22px;"></i></a>
+                            <a class="contact-item-icon" href="https://github.com/elsesteves" target="_blank" title="GitHub"><i class="fab fa-github" style="font-size: 22px;"></i></a>
                         </div>
                     </div>
+                </div>
+
+                <div id="langs_wrap">  
+                    <a class="lang" title="Português" onclick="changeLang('pt', this)">PT</a>
+                    <a class="lang active" title="English" onclick="changeLang('en', this)">EN</a>
                 </div>
             </div>
         </header>
@@ -371,40 +44,62 @@
         <div class="main-content">
             <div class="left-column">
                 <div class="section">
-                    <h2 class="section-title">Summary</h2>
-                    <p>Adaptable Web Developer, passionate about delivering outstanding quality and service, with a proven track record of successful projects and the ability to overcome the most unpredictable turmoils.</p>
-                    <p>Offering 5+ years of experience with history of recognition for outstanding performance, by meeting job demands and deadlines through diligent work-ethic and dedication to quality.</p>
+                    <h2 class="section-title lang_sensitive" data-lang_en="Summary" data-lang_pt="Resumo">Summary</h2>
+
+                    <p class="lang_sensitive" data-lang_en="Backend developer with 6+ years building and maintaining business-critical PHP systems — invoicing, payment processing, and APIs consumed by an external mobile application." data-lang_pt="Programador backend com mais de 6 anos de experiência na construção e manutenção de sistemas PHP críticos para o negócio — faturação, processamento de pagamentos e APIs consumidas por uma aplicação móvel externa.">Backend developer with 6+ years building and maintaining business-critical PHP systems — invoicing, payment processing, and APIs consumed by an external mobile application.</p>
+                    <p class="lang_sensitive" data-lang_en="Experienced in refactoring legacy systems across frameworks and PHP versions without disrupting live operations, and in performance work through caching and database optimization." data-lang_pt="Experiência na refatoração de sistemas legados entre frameworks e versões de PHP sem interromper operações em produção, e em otimização de desempenho através de caching e otimização de base de dados.">Experienced in refactoring legacy systems across frameworks and PHP versions without disrupting live operations, and in performance work through caching and database optimization.</p>
+                    <p class="lang_sensitive" data-lang_en="Skilled in user needs assessment, through an understanding provided by the Management degree from ISEG, delivering solutions better aligned with what users need." data-lang_pt="Competências em levantamento de necessidades de utilizadores, apoiadas pela licenciatura em Gestão do ISEG, permitindo entregar soluções mais alinhadas com as reais necessidades dos utilizadores.">Skilled in user needs assessment, through an understanding provided by the Management degree from ISEG, delivering solutions better aligned with what users need.</p>
+                    <p class="lang_sensitive" data-lang_en="Founder and sole developer of SnapForms (2025–2026), a WordPress plugin built around privacy by design, field-level version control, and an extensible addon architecture, among other features." data-lang_pt="Fundador e único programador do SnapForms (2025–2026), um plugin WordPress construído com base em privacidade por design, controlo de versões ao nível dos campos, e uma arquitetura extensível de addons, entre outras funcionalidades.">Founder and sole developer of SnapForms (2025–2026), a WordPress plugin built around privacy by design, field-level version control, and an extensible addon architecture, among other features.</p>
                 </div>
                 
                 <div class="section">
-                    <h2 class="section-title">Skills</h2>
+                    <h2 class="section-title lang_sensitive" data-lang_en="Skills" data-lang_pt="Competências">Skills</h2>
+
+                    <h4 class="skill-group-title lang_sensitive" data-lang_en="Backend" data-lang_pt="Backend">Backend</h4>
                     <div class="tags">
-                        <span class="tag">PHP (8+, 7+, 5+)</span>
+                        <span class="tag">PHP 8/7/5</span>
+                        <span class="tag">C#</span>
                         <span class="tag">MySQL</span>
                         <span class="tag">MVC</span>
-                        <span class="tag">PHP Frameworks</span>
-                        <span class="tag">PHPMailer</span>
-                        <span class="tag">Git</span>
+                        <span class="tag">REST API</span>
+                        <span class="tag">Composer</span>
+                    </div>
+
+                    <h4 class="skill-group-title lang_sensitive" data-lang_en="WordPress" data-lang_pt="WordPress">WordPress</h4>
+                    <div class="tags">
+                        <span class="tag">Plugin API</span>
+                        <span class="tag">Hooks & Filters</span>
+                        <span class="tag">Plugin Security</span>
+                        <span class="tag">Freemius</span>
+                    </div>
+
+                    <h4 class="skill-group-title lang_sensitive" data-lang_en="Performance &amp; Infrastructure" data-lang_pt="Desempenho &amp; Infraestrutura">Performance & Infrastructure</h4>
+                    <div class="tags">
+                        <span class="tag">Apache</span>
+                        <span class="tag">Linux</span>
                         <span class="tag">Redis</span>
+                        <span class="tag lang_sensitive" data-lang_en="Database Query &amp; Index Optimization" data-lang_pt="otimização de queries e índices de bases de dados">Database Query &amp; Index Optimization</span>                        
+                        <span class="tag">Git</span>
+                        <span class="tag">Postman</span>
+                    </div>
+
+                    <h4 class="skill-group-title lang_sensitive" data-lang_en="Frontend" data-lang_pt="Frontend">Frontend</h4>
+                    <div class="tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">jQuery</span>
                         <span class="tag">HTML5</span>
                         <span class="tag">CSS3</span>
-                        <span class="tag">Javascript</span>
-                        <span class="tag">JQuery</span>
-                        <span class="tag">Bootstrap</span>
                         <span class="tag">AJAX</span>
-                        <span class="tag">JSON</span>
-                        <span class="tag">XML</span>
-                        <span class="tag">REST</span>
-                        <span class="tag">APIs and Webservices</span>
                     </div>
+
                 </div>
                 
                 <div class="section">
-                    <h2 class="section-title">Languages</h2>
+                    <h2 class="section-title lang_sensitive" data-lang_en="Languages" data-lang_pt="Idiomas">Languages</h2>
                     <div class="skill-item">
                         <div class="skill-name">
-                            <span>Portuguese</span>
-                            <span>Native</span>
+                            <span class="lang_sensitive" data-lang_en="Portuguese" data-lang_pt="Português">Portuguese</span>
+                            <span class="lang_sensitive" data-lang_en="Native" data-lang_pt="Nativo">Native</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-level" style="width: 100%;"></div>
@@ -412,8 +107,8 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-name">
-                            <span>English</span>
-                            <span>C1 Advanced</span>
+                            <span class="lang_sensitive" data-lang_en="English" data-lang_pt="Inglês">English</span>
+                            <span class="lang_sensitive" data-lang_en="C1 Advanced" data-lang_pt="C1 Avançado">C1 Advanced</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-level" style="width: 90%;"></div>
@@ -421,8 +116,8 @@
                     </div>
                     <div class="skill-item">
                         <div class="skill-name">
-                            <span>Spanish</span>
-                            <span>A2 Elementary</span>
+                            <span class="lang_sensitive" data-lang_en="Spanish" data-lang_pt="Espanhol">Spanish</span>
+                            <span class="lang_sensitive" data-lang_en="A2 Elementary" data-lang_pt="A2 Elementar">A2 Elementary</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-level" style="width: 40%;"></div>
@@ -435,121 +130,154 @@
                         <i class="fab fa-linkedin-in"></i>
                     </a>
 
-                    <a href="https://github.com/edluis97" target="_blank" title="GitHub">
+                    <a href="https://github.com/elsesteves" target="_blank" title="GitHub">
                         <i class="fab fa-github" style="font-size: 22px;"></i>
-                    </a>
-                    
+                    </a>                    
                 </div>
             </div>
             
             <div class="right-column">
                 <div class="section">
-                    <h2 class="section-title">Work Experience</h2>
+                    <h2 class="section-title lang_sensitive" data-lang_en="Work Experience" data-lang_pt="Experiência Profissional">Work Experience</h2>
                     <div class="timeline-item">
-                        <h3>Full Stack Web Developer</h3>
-                        <div class="date">July 2021 - Current</div>
-                        <p><strong>Ciência Viva | Lisbon</strong></p>
-                        <p>Contributed to the entire lifecycle of numerous flagship projects by conducting pre-project analysis, development, and maintenance tasks. Worked closely with stakeholders from several departments to transform their visions into viable functionalities.</p>
-                        <p>Ensured the smooth functioning of web applications by providing debugging support, performing regular maintenance tasks, and employing advanced techniques including caching (via Redis) and database table indexing.</p>
-                        <p>Developed and managed custom content management systems and APIs to meet organizational requirements, facilitating seamless content updates with scalable capabilities.</p>
-                        <p>Successfully refactored critical systems, migrating frameworks and PHP versions, which handle business-critical tasks such as invoicing, payment processing, and an API for an external mobile application.</p>
-                        <p>Contributed to selection processes, including test creation for candidate evaluation and providing assistance in onboarding.</p>
-                        <p class="website-pretext">Some of the developed/modified websites:</p>
-                        <p>                            
+                        <h3 class="lang_sensitive" data-lang_en="Full Stack Web Developer" data-lang_pt="Programador Web Full Stack">Full Stack Web Developer</h3>
+                        <div class="date lang_sensitive" data-lang_en="July 2021 - Current" data-lang_pt="Julho 2021 - Presente">July 2021 - Current</div>
+                        <p><strong>Ciência Viva | <span class="lang_sensitive" data-lang_en="Lisbon" data-lang_pt="Lisboa">Lisbon</span></strong></p>
+
+                        <p class="lang_sensitive" data-lang_en="Refactored and migrated business-critical systems including those handling invoicing and payment processing across frameworks and PHP versions, maintaining continuity of live financial operations throughout." data-lang_pt="Refatorou e migrou sistemas críticos para o negócio, incluindo os responsáveis por faturação e processamento de pagamentos, entre frameworks e versões de PHP, mantendo a continuidade das operações financeiras em produção durante todo o processo">Refactored and migrated business-critical systems including those handling invoicing and payment processing across frameworks and PHP versions, maintaining continuity of live financial operations throughout.</p>
+
+                        <p class="lang_sensitive" data-lang_en="Designed and maintained REST APIs serving an external mobile application, plus several internal systems supporting organizational workflows." data-lang_pt="Concebeu e manteve APIs REST ao serviço de uma aplicação móvel externa, além de vários sistemas internos de apoio a fluxos de trabalho organizacionais.">Designed and maintained REST APIs serving an external mobile application, plus several internal systems supporting organizational workflows.</p>
+
+                        <p class="lang_sensitive" data-lang_en="Owned the full project lifecycle for flagship platforms – requirements analysis with stakeholders across departments, development, deployment, and ongoing maintenance." data-lang_pt="Responsável pelo ciclo de vida completo de plataformas de referência — análise de requisitos com stakeholders de diversos departamentos, desenvolvimento, deployment e manutenção contínua.">Owned the full project lifecycle for flagship platforms – requirements analysis with stakeholders across departments, development, deployment, and ongoing maintenance.</p>
+
+                        <p class="lang_sensitive" data-lang_en="Ensured the smooth performance of web applications by providing debugging support, performing regular maintenance tasks, and employing advanced techniques such as Redis caching and database table indexing – optimizing performance bottlenecks." data-lang_pt="Garantiu o bom funcionamento das aplicações web através de suporte à depuração, manutenção regular, e técnicas avançadas como caching com Redis e indexação de bases de dados — otimizando pontos críticos de desempenho.">Ensured the smooth performance of web applications by providing debugging support, performing regular maintenance tasks, and employing advanced techniques such as Redis caching and database table indexing – optimizing performance bottlenecks.</p>
+
+                        <p class="lang_sensitive" data-lang_en="Collaborated with data privacy consultants and implemented technical measures to strengthen GDPR compliance across web applications." data-lang_pt="Colaborou com consultores de privacidade de dados e implementou medidas técnicas para reforçar a conformidade com o RGPD em aplicações web.">Collaborated with data privacy consultants and implemented technical measures to strengthen GDPR compliance across web applications.</p>
+                        
+                        <p class="lang_sensitive" data-lang_en="Configured Apache virtual hosts in Linux environments, diagnosed DNS issues and configured user access for web servers." data-lang_pt="Configurou virtual hosts em Apache em ambientes Linux, diagnosticou problemas de DNS e geriu acessos de utilizadores em servidores web.">Configured Apache virtual hosts in Linux environments, diagnosed DNS issues and configured user access for web servers.</p>
+
+                        <p class="lang_sensitive" data-lang_en="Built the technical assessment framework used in the hiring of a new web designer and ran onboarding for the new team member." data-lang_pt="Definiu o método de avaliação técnica utilizada na contratação de um novo web designer, e conduziu o onboarding do novo membro da equipa.">Built the technical assessment framework used in the hiring of a new web designer and ran onboarding for the new team member.</p>
+
+                        <p>
+                            <span class="website-pretext lang_sensitive" data-lang_en="Key platforms:" data-lang_pt="Plataformas-chave:">Key platforms:</span>                        
                             <a href="https://www.cienciaviva.pt/" class="website-link" target="_blank">cienciaviva.pt</a>
                             <a href="https://www.esero.pt/" class="website-link" target="_blank">esero.pt</a>
-                            <a href="https://nei.cienciaviva.pt/" class="website-link" target="_blank">nei.cienciaviva.pt</a>
-                            <a href="https://www.circuitoscienciaviva.pt/" class="website-link" target="_blank">circuitoscienciaviva.pt</a>
-                            <a href="https://www.pavconhecimento.pt/" class="website-link" target="_blank">pavconhecimento.pt</a>
                             <a href="https://www.poemscentre.eu/" class="website-link" target="_blank">poemscentre.eu</a>
+                            <a href="https://nei.cienciaviva.pt/" class="website-link" target="_blank">nei.cienciaviva.pt</a>
+                            <a href="https://eclipse2026.pt/" class="website-link" target="_blank">eclipse2026.pt</a>
+                            <a href="https://www.pavconhecimento.pt/" class="website-link" target="_blank">pavconhecimento.pt</a>
                         </p>
                         <div class="tags">
-                            <span class="tag">PHP 8+</span>
-                            <span class="tag">PHP 7+</span>
-                            <span class="tag">PDO</span>
+                            <span class="tag">PHP 8/7</span>
                             <span class="tag">MySQL</span>
+                            <span class="tag">Git</span>
+                            <span class="tag">Redis</span>
                             <span class="tag">Composer</span>
                             <span class="tag">Javascript</span>
-                            <span class="tag">JQuery</span>
+                            <span class="tag">jQuery</span>
                             <span class="tag">HTML5</span>
                             <span class="tag">CSS3</span>
-                            <span class="tag">Redis</span>
                             <span class="tag">PHPSpreadsheet</span>
                         </div>
                     </div>
                     
                     <div class="timeline-item">
-                        <h3>Full Stack Web Developer</h3>
-                        <div class="date">September 2020 - June 2021</div>
+                        <h3 class="lang_sensitive" data-lang_en="Full Stack Web Developer" data-lang_pt="Programador Web Full Stack">Full Stack Web Developer</h3>
+                        <div class="date lang_sensitive" data-lang_en="September 2020 - June 2021" data-lang_pt="Setembro 2020 – Junho 2021">September 2020 - June 2021</div>
                         <p><strong>Simbiotic | Sacavém</strong></p>
-                        <p>Developed solutions for diverse clientele, including multi-language online stores, using a custom proprietary PHP MVC structure and an intuitive backoffice for easy content management.</p>
-                        <p>Successfully oversaw all aspects of core structure maintenance, debugging, and feature enhancement.</p>
-                        <p class="website-pretext">Some of the developed websites:</p>
+
+                        <p class="lang_sensitive" data-lang_en="Delivered multi-language e-commerce platforms and institutional websites for agency clients on a proprietary PHP MVC framework, including the content management backoffice." data-lang_pt="Desenvolveu plataformas de e-commerce multilingue e websites institucionais para clientes de agência, sobre uma framework PHP MVC proprietária, incluindo o backoffice de gestão de conteúdos.">Delivered multi-language e-commerce platforms and institutional websites for agency clients on a proprietary PHP MVC framework, including the content management backoffice.</p>
+                        <p class="lang_sensitive" data-lang_en="Maintained and extended the shared core framework used across all client projects, introducing functionalities that streamlined processes for both the agency and its clients." data-lang_pt="Manteve e expandiu a framework core partilhada por todos os projetos de clientes, introduzindo funcionalidades que otimizaram processos tanto para a agência como para os seus clientes.">Maintained and extended the shared core framework used across all client projects, introducing functionalities that streamlined processes for both the agency and its clients.</p>
+
                         <p>
-                            <a href="https://en.rl-home.pt/" class="website-link" target="_blank">rl-home.pt</a>
-                            <a href="https://en.vinazzo.com/" class="website-link" target="_blank">vinazzo.com</a>
+                            <span class="website-pretext lang_sensitive" data-lang_en="Selected work:" data-lang_pt="Trabalho selecionado:">Selected work:</span>
                             <a href="https://www.jf-campodeourique.pt/" class="website-link" target="_blank">jf-campodeourique.pt</a>
-                            <a href="https://www.majestik.pt/" class="website-link" target="_blank">majestik.pt</a>
+                            <a href="https://www.agurys.pt/" class="website-link" target="_blank">agurys.pt</a>
                             <a href="https://www.predilux.pt/" class="website-link" target="_blank">predilux.pt</a>
                             <a href="https://www.kidsandnits.pt/" class="website-link" target="_blank">kidsandnits.pt</a>
                         </p>
                         <div class="tags">
-                            <span class="tag">PHP 5+</span>
-                            <span class="tag">PHP 7+</span>
+                            <span class="tag">PHP 5/7</span>
                             <span class="tag">MySQL</span>
                             <span class="tag">Javascript</span>
-                            <span class="tag">JQuery</span>
+                            <span class="tag">jQuery</span>
                             <span class="tag">HTML5</span>
                             <span class="tag">CSS3</span>
-                            <span class="tag">PHPMailer</span>
                         </div>
                     </div>
                     
                     <div class="timeline-item">
-                        <h3>Full Stack Web Developer</h3>
-                        <div class="date">January 2020 - September 2020</div>
+                        <h3 class="lang_sensitive" data-lang_en="Full Stack Web Developer" data-lang_pt="Programador Web Full Stack">Full Stack Web Developer</h3>
+                        <div class="date lang_sensitive" data-lang_en="January 2020 - September 2020" data-lang_pt="Janeiro 2020 - Setembro 2020">January 2020 - September 2020</div>
                         <p><strong>Great Ink | Sintra</strong></p>
-                        <p>Created partnership websites from scratch along with their accompanying backoffices for easier content management. Successfully executed these projects without deploying any PHP framework.</p>
-                        <p>The backoffices allowed managing product inventory, categories, reseller store locations, web pages content, and contact details.</p>
-                        <p class="website-pretext">Developed websites:</p>
+                        <p class="lang_sensitive" data-lang_en="Built partnership websites and e-commerce platforms with custom backoffices from scratch without a framework, giving internal users control over product inventory, categories, reseller locations, and site content." data-lang_pt="Construiu websites institucionais e plataformas de e-commerce com backoffices personalizados desenvolvidos de raiz, sem recurso a framework, dando aos utilizadores internos controlo sobre inventário de produtos, categorias, localizações de revendedores e conteúdo do site."
+                        >Built partnership websites and e-commerce platforms with custom backoffices from scratch without a framework, giving internal users control over product inventory, categories, reseller locations, and site content.</p>
+                        <p class="lang_sensitive" data-lang_en="Added data visualization to the backoffices to surface inventory and sales information to non-technical users." data-lang_pt="Adicionou visualização de dados aos backoffices para apresentar informação de inventário e vendas a utilizadores não técnicos.">Added data visualization to the backoffices to surface inventory and sales information to non-technical users.</p>
+
                         <p>
+                            <span class="website-pretext lang_sensitive" data-lang_en="Selected work:" data-lang_pt="Trabalho selecionado:">Selected work:</span>
                             <a href="https://vention.pt/" class="website-link" target="_blank">vention.pt</a>
-                            <a href="https://agrineves.pt/" class="website-link" target="_blank">agrineves.pt</a>
+                            <a href="https://pcgo.pt/" class="website-link" target="_blank">pcgo.pt</a>
                             <a href="http://ilustreproeza.com/" class="website-link" target="_blank">ilustreproeza.com</a>
-                            <a href="https://goeik.com/" class="website-link" target="_blank">goeik.com</a>
                         </p>
                         <div class="tags">
-                            <span class="tag">PHP 7+</span>
+                            <span class="tag">PHP 7</span>
                             <span class="tag">MySQL</span>
                             <span class="tag">Javascript</span>
-                            <span class="tag">JQuery</span>
-                            <span class="tag">JQuery UI</span>
+                            <span class="tag">jQuery</span>
                             <span class="tag">AJAX</span>
                             <span class="tag">HTML5</span>
                             <span class="tag">CSS3</span>
-                            <span class="tag">PHPMailer</span>
-                            <span class="tag">Leaflet.js</span>
-                            <span class="tag">Chart.js</span>
                         </div>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                <div class="section">
+                    <h2 class="section-title lang_sensitive" data-lang_en="Projects" data-lang_pt="Projetos">Projects</h2>
+                    <div class="timeline-item">
+                        <h3 class="lang_sensitive" data-lang_en="SnapForms - Founder & Sole Developer" data-lang_pt="SnapForms - Fundador e Único Programador">SnapForms - Founder & Sole Developer</h3>
+                        <div class="date lang_sensitive" data-lang_en="May 2025 – April 2026" data-lang_pt="Maio 2025 – Abril 2026">May 2025 – April 2026</div>
+                        <p><b class="lang_sensitive" data-lang_en="WordPress form plugin built with a Privacy by Design philosophy." data-lang_pt="Plugin de formulários para WordPress construído sob uma filosofia de Privacidade por Design.">WordPress form plugin built with a Privacy by Design philosophy.</b></p>
+                        <ul style="margin-bottom: 10px;">
+                            <li class="lang_sensitive" data-lang_en="Aimed to simplify GDPR compliance for WordPress forms." data-lang_pt="Visava simplificar a conformidade com o RGPD em formulários WordPress.">Aimed to simplify GDPR compliance for WordPress forms.</li>
+                            <li class="lang_sensitive" data-lang_en="Built dynamic data visualization panels, allowing filtering by field values, UTM tags, country, platform, etc." data-lang_pt="Construiu painéis dinâmicos de visualização de dados, com filtragem por valores de campos, tags UTM, país, plataforma, etc.">Built dynamic data visualization panels, allowing filtering by field values, UTM tags, country, platform, etc.</li>
+                            <li class="lang_sensitive" data-lang_en="Added version tracking to fields, allowing for easier recovery, and mitigating data loss through field changes." data-lang_pt="Adicionou controlo de versões a nível de campo, facilitando a recuperação de dados e mitigando a sua perda em caso de alterações.">Added version tracking to fields, allowing for easier recovery, and mitigating data loss through field changes.</li>
+                            <li class="lang_sensitive" data-lang_en="Designed an extensible addon architecture based on a registry pattern with defined action surfaces, backtrace-derived ownership resolution." data-lang_pt="Concebeu uma arquitetura extensível de addons baseada num padrão registry, com superfícies de ação definidas e resolução de ownership derivada de backtrace.">Designed an extensible addon architecture based on a registry pattern with defined action surfaces, backtrace-derived ownership resolution.</li>
+                            <li class="lang_sensitive" data-lang_en="Authored the Addon Development Guide documenting the extension API for third-party developers." data-lang_pt="Elaborou o guia de desenvolvimento de addons, documentando a API de extensão para programadores terceiros.">Authored the Addon Development Guide documenting the extension API for third-party developers.</li>
+                            <li class="lang_sensitive" data-lang_en="Managed licensing and commercial distribution through Freemius, and defined product positioning and go-to-market strategy end to end." data-lang_pt="Geriu o licenciamento e a distribuição comercial através da Freemius, e definiu o posicionamento do produto e a estratégia de go-to-market de ponta a ponta.">Managed licensing and commercial distribution through Freemius, and defined product positioning and go-to-market strategy end to end.</li>
+                        </ul>
+
+                        <p>
+                            <span class="website-pretext lang_sensitive" data-lang_en="Selected work:" data-lang_pt="Trabalho selecionado:">Website:</span>
+                            <a href="https://snapforms.tech/" class="website-link" target="_blank">snapforms.tech</a>
+                        </p>
+
+                        <div class="tags">
+                            <span class="tag">PHP 8</span>
+                            <span class="tag">WordPress Plugin API</span>
+                            <span class="tag">Javascript</span>
+                            <span class="tag">Freemius</span>
+                        </div>
+
                     </div>
                 </div>
                 
                 <div class="section">
-                    <h2 class="section-title">Education</h2>
+                    <h2 class="section-title lang_sensitive" data-lang_en="Education" data-lang_pt="Formação Académica">Education</h2>
                     <div class="timeline-item">
-                        <h3>Bachelor of Business Administration | Management</h3>
+                        <h3 class="lang_sensitive" data-lang_en="Bachelor of Business Administration | Management" data-lang_pt="Licenciatura em Gestão">Bachelor of Business Administration | Management</h3>
                         <div class="date">2018</div>
-                        <p><strong>ISEG - Lisbon School of Management and Economics, Lisbon</strong></p>
-                        <p>Grade Point Average: 16.4 / 20</p>
+                        <p><strong class="lang_sensitive" data-lang_en="ISEG - Lisbon School of Management and Economics, Lisbon" data-lang_pt="ISEG, Instituto Superior de Economia e Gestão, Lisboa">ISEG - Lisbon School of Management and Economics, Lisbon</strong></p>
+                        <p><span class="lang_sensitive" data-lang_en="Grade Point Average:" data-lang_pt="Média">Grade Point Average:</span> 16.4 / 20</p>
                     </div>
                 </div>
 
                 <div class="section">
-                    <h2 class="section-title">Certifications</h2>
+                    <h2 class="section-title lang_sensitive" data-lang_en="Certifications" data-lang_pt="Certificações">Certifications</h2>
                     <div class="timeline-item">
-                        <h3>PHP skill badge</h3>
-                        <div class="date">2021</div>
-                        <p>LinkedIn</p>
+                        <h3 class="lang_sensitive" data-lang_en="PHP skill badge" data-lang_pt="Skill badge de PHP">PHP skill badge</h3>
+                        <p>LinkedIn - <span class="date">2021</span></p>
                     </div>
                 </div>
 
@@ -565,7 +293,7 @@
                 const width = bar.style.width;
                 bar.style.width = '0';
                 setTimeout(() => {
-                    bar.style.transition = 'width 1s ease-in-out';
+                    bar.style.transition = 'width 2.7s ease-in-out';
                     bar.style.width = width;
                 }, 500);
             });
