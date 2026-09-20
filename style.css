@@ -39,12 +39,17 @@ body {
 }
 
 .header {
-    background: var(--primary);
+    /*background: var(--primary);*/
     color: white;
     padding: 30px;
     display: flex;
     align-items: center;
     position: relative;
+
+    background-image: url(./assets/img/bg_header.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .header-content {
