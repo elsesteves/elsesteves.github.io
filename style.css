@@ -250,6 +250,7 @@ body {
 .timeline-item .date {
     color: var(--text-light);
     font-style: italic;
+    font-size: 14px;
     margin-bottom: 5px;
 }
 
